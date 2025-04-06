@@ -18,7 +18,7 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    // CREATE
+
     @PostMapping(value = "/save", produces = "application/json")
     public ResponseEntity<Void> saveTask(@RequestBody TaskDto taskDto) {
         try {
@@ -33,7 +33,7 @@ public class TaskController {
         }
     }
 
-    // READ (GET ALL)
+
     @GetMapping(value = "/all", produces = "application/json")
     public ResponseEntity<List<TaskDto>> getAllTasks() {
         try {
@@ -45,7 +45,7 @@ public class TaskController {
         }
     }
 
-    // READ (GET BY ID)
+
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<TaskDto> getTaskById(@PathVariable Long id) {
         try {
@@ -61,7 +61,7 @@ public class TaskController {
         }
     }
 
-    // UPDATE
+
     @PutMapping(value = "/update/{id}", produces = "application/json")
     public ResponseEntity<Void> updateTask(@PathVariable Long id, @RequestBody TaskDto taskDto) {
         try {
@@ -76,7 +76,7 @@ public class TaskController {
         }
     }
 
-    // DELETE
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         try {
